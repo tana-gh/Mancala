@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.cysharp.messagepipe": {
+      "version": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "10cc1a25545b8b4e2687e46f64bfbedb331e7882"
+    },
+    "com.cysharp.messagepipe.vcontainer": {
+      "version": "https://github.com/Cysharp/MessagePipe.git?path=src/MessagePipe.Unity/Assets/Plugins/MessagePipe.VContainer",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "10cc1a25545b8b4e2687e46f64bfbedb331e7882"
+    },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
       "depth": 0,
@@ -174,13 +188,6 @@
       "source": "git",
       "dependencies": {},
       "hash": "c9dcf7041cf7ff3d6451a55cb75dbb99e589e13e"
-    },
-    "jp.hadashikick.vitalrouter": {
-      "version": "https://github.com/hadashiA/VitalRouter.git?path=/src/VitalRouter.Unity/Assets/VitalRouter",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e629a034464562395ac830cd5832bf42b64291b2"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

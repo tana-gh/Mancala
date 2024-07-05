@@ -24,7 +24,6 @@ $@"
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using VitalRouter.VContainer;
 
 namespace tana_gh.Mancala
 {{
