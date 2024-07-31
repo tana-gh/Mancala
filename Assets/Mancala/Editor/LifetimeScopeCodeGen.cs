@@ -19,11 +19,16 @@ namespace tana_gh.Mancala.Editor
 
         public static void GenerateOne(CodeGenContext context, SceneKind sceneKind)
         {
+            var entityStores = RoleAttributeUtil.GetAllTypesWithRole("EntityStore", sceneKind);
+            var messages = RoleAttributeUtil.GetAllTypesWithRole("Message", sceneKind);
+            var gameMessages = RoleAttributeUtil.GetAllTypesWithRole("GameMessage", sceneKind);
+            var handlers = RoleAttributeUtil.GetAllTypesWithRole("Handler", sceneKind);
+
             context.AddCode($"{sceneKind}LifetimeScope.g.cs",
 $@"
-using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using MessagePipe;
 
 namespace tana_gh.Mancala
 {{
@@ -32,7 +37,23 @@ namespace tana_gh.Mancala
         protected override void Configure(IContainerBuilder builder)
         {{
             base.Configure(builder);
-
+        {
+            entityStores
+            .Select(entityStore => $@"builder.Register<{entityStore.GetTypeName()}>(Lifetime.Scoped);")
+            .ToLines(12)
+        }{
+            handlers
+            .Select(handler => $@"builder.Register<{handler.GetTypeName()}>(Lifetime.Scoped);")
+            .ToLines(12)
+        }{
+            (
+                messages.Concat(gameMessages).Any() ?
+                new string[] { "var options = builder.RegisterMessagePipe();" }
+                .Concat(messages.Concat(gameMessages).Select(message => $@"builder.RegisterMessageBroker<{message.GetTypeName()}>(options);")) :
+                Enumerable.Empty<string>()
+            )
+            .ToLines(12)
+        }
             builder.RegisterEntryPoint<{sceneKind}EntryPoint>();
         }}
     }}

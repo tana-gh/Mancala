@@ -7,7 +7,6 @@ namespace tana_gh.Mancala
 {
     public partial class RootEntryPoint
     {
-        [Inject] private IObjectResolver Resolver { get; set; }
 
         partial void Init()
         {

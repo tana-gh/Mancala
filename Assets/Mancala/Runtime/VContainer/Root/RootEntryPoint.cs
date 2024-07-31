@@ -15,7 +15,7 @@ namespace tana_gh.Mancala
 
             await UniTask.Yield();
 
-            Debug.Log("Root started.");
+            Debug.Log("Root entry point started.");
         }
     }
 }

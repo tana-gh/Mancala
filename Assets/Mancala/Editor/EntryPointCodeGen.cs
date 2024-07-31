@@ -19,6 +19,8 @@ namespace tana_gh.Mancala.Editor
 
         public static void GenerateOne(CodeGenContext context, SceneKind sceneKind)
         {
+            var handlers = RoleAttributeUtil.GetAllTypesWithRole("Handler", sceneKind);
+
             context.AddCode($"{sceneKind}EntryPoint.g.cs",
 $@"
 using VContainer;
@@ -26,11 +28,18 @@ using VContainer;
 namespace tana_gh.Mancala
 {{
     public partial class {sceneKind}EntryPoint
-    {{
-        [Inject] private IObjectResolver Resolver {{ get; set; }}
+    {{{
+        handlers
+        .Select(handler => $@"[Inject] private {handler.GetTypeName()} {handler.GetVarName(true)} {{ get; set; }}")
+        .ToLines(8)
+    }
 
         partial void Init()
-        {{
+        {{{
+            handlers
+            .Select(handler => $@"{handler.GetVarName(true)}.Init();")
+            .ToLines(12)
+        }
         }}
     }}
 }}

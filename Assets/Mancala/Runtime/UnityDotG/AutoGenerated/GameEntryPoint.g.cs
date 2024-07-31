@@ -7,10 +7,13 @@ namespace tana_gh.Mancala
 {
     public partial class GameEntryPoint
     {
-        [Inject] private IObjectResolver Resolver { get; set; }
+        [Inject] private GameHandler GameHandler { get; set; }
+        [Inject] private GameManager GameManager { get; set; }
 
         partial void Init()
         {
+            GameHandler.Init();
+            GameManager.Init();
         }
     }
 }
