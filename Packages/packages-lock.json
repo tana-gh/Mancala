@@ -19,14 +19,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "fbe0bf85155f42f8832205f7b3ac3df571ada33e"
+      "hash": "f057abff0f4ea52e4c9699c2831808d6c0a27bcc"
     },
     "com.tana_gh.unity_dot_g": {
       "version": "https://github.com/tana-gh/UnityDotG.git?path=/Assets/UnityDotG",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "bb29c7fe3337d2ce4febfe61e58829e66074f121"
+      "hash": "a9372b6517ab96a911cf0079a48f934b4b3b94eb"
     },
     "com.unity.burst": {
       "version": "1.8.12",
@@ -53,7 +53,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.28",
+      "version": "3.0.31",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -143,7 +143,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.6",
+      "version": "3.0.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -173,7 +173,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.2",
+      "version": "1.9.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -187,7 +187,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c9dcf7041cf7ff3d6451a55cb75dbb99e589e13e"
+      "hash": "e743c1059bdc3faf797b04a91ec36dc829bedeb8"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
