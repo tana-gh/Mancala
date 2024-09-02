@@ -194,11 +194,6 @@ Varyings LitPassVertex(Attributes input)
     return output;
 }
 
-half4 GlassLit(InputData inputData)
-{
-    
-}
-
 // Used in Standard (Physically Based) shader
 void LitPassFragment(
     Varyings input
