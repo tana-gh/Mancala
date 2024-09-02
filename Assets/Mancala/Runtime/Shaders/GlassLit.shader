@@ -192,7 +192,7 @@ Shader "tana_gh/GlassLit"
             // -------------------------------------
             // Render State Commands
             //Blend[_SrcBlend][_DstBlend], [_SrcBlendAlpha][_DstBlendAlpha]
-            Blend One SrcColor
+            Blend One SrcColor, One OneMinusSrcAlpha
             ZWrite[_ZWrite]
             Cull[_Cull]
             AlphaToMask[_AlphaToMask]
